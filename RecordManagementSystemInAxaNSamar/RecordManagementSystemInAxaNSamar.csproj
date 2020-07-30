@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88CEE774-D45F-4D14-9CB8-828DA8B3F7AA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecordManagementSystemInAxaNSamar</RootNamespace>
+    <AssemblyName>RecordManagementSystemInAxaNSamar</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\PpYCha\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>04215007B23BABB95B556E331815F0AD0B876DC8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RecordManagementSystemInAxaNSamar_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Bunifu_UI_v1.4">
+      <HintPath>F:\Bunifu_UI_v1.4.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="GSMCommServer, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\GSMCommServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GSMCommShared, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\GSMCommShared.dll</HintPath>
+    </Reference>
+    <Reference Include="GSMCommunication, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\GSMCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="PDUConverter, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\PDUConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="client_CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>client_CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007270523597_Nulll.cs" />
+    <Compile Include="Migrations\202007270523597_Nulll.Designer.cs">
+      <DependentUpon>202007270523597_Nulll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007280844134_SADAD.cs" />
+    <Compile Include="Migrations\202007280844134_SADAD.Designer.cs">
+      <DependentUpon>202007280844134_SADAD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentRecords.cs" />
+    <Compile Include="Tabpages\AddEdit\AddEditAxaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditAxaForm.Designer.cs">
+      <DependentUpon>AddEditAxaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditClient.Designer.cs">
+      <DependentUpon>AddEditClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditEmployee.Designer.cs">
+      <DependentUpon>AddEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditPlan.Designer.cs">
+      <DependentUpon>AddEditPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditPlanClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditPlanClient.Designer.cs">
+      <DependentUpon>AddEditPlanClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\AddEditUser.Designer.cs">
+      <DependentUpon>AddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\ManageAXAForm_Subform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\AddEdit\ManageAXAForm_Subform.Designer.cs">
+      <DependentUpon>ManageAXAForm_Subform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLCon.cs" />
+    <Compile Include="ViewInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInformationForm.Designer.cs">
+      <DependentUpon>ViewInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\View\AxaForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\View\AxaForms.Designer.cs">
+      <DependentUpon>AxaForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\View\ClienrtsPaymentMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\View\ClienrtsPaymentMonitoring.Designer.cs">
+      <DependentUpon>ClienrtsPaymentMonitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\View\ClientsRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\View\ClientsRecords.Designer.cs">
+      <DependentUpon>ClientsRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\View\EmployeesProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\View\EmployeesProfile.Designer.cs">
+      <DependentUpon>EmployeesProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\View\FinancialAdviserMonitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\View\FinancialAdviserMonitoring.Designer.cs">
+      <DependentUpon>FinancialAdviserMonitoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabpages\View\SmsNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabpages\View\SmsNotification.Designer.cs">
+      <DependentUpon>SmsNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AxaContext.cs" />
+    <Compile Include="Models\AxaDbInitializer.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\ClientBeneficiaries.cs" />
+    <Compile Include="Models\ClientPlan.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Plan.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="client_CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>client_CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007270523597_Nulll.resx">
+      <DependentUpon>202007270523597_Nulll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007280844134_SADAD.resx">
+      <DependentUpon>202007280844134_SADAD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Tabpages\AddEdit\AddEditAxaForm.resx">
+      <DependentUpon>AddEditAxaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\AddEdit\AddEditClient.resx">
+      <DependentUpon>AddEditClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\AddEdit\AddEditEmployee.resx">
+      <DependentUpon>AddEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\AddEdit\AddEditPlan.resx">
+      <DependentUpon>AddEditPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\AddEdit\AddEditPlanClient.resx">
+      <DependentUpon>AddEditPlanClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\AddEdit\AddEditUser.resx">
+      <DependentUpon>AddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\AddEdit\ManageAXAForm_Subform.resx">
+      <DependentUpon>ManageAXAForm_Subform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInformationForm.resx">
+      <DependentUpon>ViewInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\View\AxaForms.resx">
+      <DependentUpon>AxaForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\View\ClienrtsPaymentMonitoring.resx">
+      <DependentUpon>ClienrtsPaymentMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\View\ClientsRecords.resx">
+      <DependentUpon>ClientsRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\View\EmployeesProfile.resx">
+      <DependentUpon>EmployeesProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\View\FinancialAdviserMonitoring.resx">
+      <DependentUpon>FinancialAdviserMonitoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabpages\View\SmsNotification.resx">
+      <DependentUpon>SmsNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.Client.datasource" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.ClientBeneficiaries.datasource" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.ClientPlan.datasource" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.Employee.datasource" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.PaymentRecords.datasource" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.Plan.datasource" />
+    <None Include="Properties\DataSources\RecordManagementSystemInAxaNSamar.Model.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salesman_2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update Left Rotation_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_management_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key_96px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_2_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Management_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Management_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id_man_in_red_glasses_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gender_neutral_user_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Form_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man_phone_notification_bell_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planner_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_male_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_user_male_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_user_male_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school_director_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school_director_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school_director_32px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gender_neutral_user_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treatment_plan_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client_management_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Dollar_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planner_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file_127px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usb_connector_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\birthday_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paycheque_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expired_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
