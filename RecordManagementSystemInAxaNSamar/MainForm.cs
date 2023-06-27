@@ -47,7 +47,7 @@ namespace RecordManagementSystemInAxaNSamar
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddEditClient addEditClient = new AddEditClient();
-            addEditClient.action = "Add";
+            AddEditClient.action = "Add";
             addEditClient.ShowDialog();
         }
 

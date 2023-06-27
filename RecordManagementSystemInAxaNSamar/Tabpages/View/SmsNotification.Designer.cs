@@ -40,6 +40,12 @@
             this.bt_Send = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView_ClientList = new System.Windows.Forms.DataGridView();
+            this.clientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMiddleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cellphoneNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_Birthday = new System.Windows.Forms.Button();
             this.tb_PaidClients = new System.Windows.Forms.Button();
             this.tb_DueClients = new System.Windows.Forms.Button();
@@ -52,16 +58,10 @@
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.cb_PortNumber = new System.Windows.Forms.ComboBox();
             this.bt_BatchSend = new System.Windows.Forms.Button();
-            this.clientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cMiddleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cellphoneNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ClientList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bt_Close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_Close)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_message
@@ -199,6 +199,8 @@
             // 
             // dataGridView_ClientList
             // 
+            this.dataGridView_ClientList.AllowUserToAddRows = false;
+            this.dataGridView_ClientList.AllowUserToDeleteRows = false;
             this.dataGridView_ClientList.AutoGenerateColumns = false;
             this.dataGridView_ClientList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_ClientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -211,9 +213,50 @@
             this.dataGridView_ClientList.DataSource = this.clientBindingSource;
             this.dataGridView_ClientList.Location = new System.Drawing.Point(6, 60);
             this.dataGridView_ClientList.Name = "dataGridView_ClientList";
+            this.dataGridView_ClientList.ReadOnly = true;
             this.dataGridView_ClientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_ClientList.Size = new System.Drawing.Size(613, 270);
             this.dataGridView_ClientList.TabIndex = 3;
+            // 
+            // clientIdDataGridViewTextBoxColumn
+            // 
+            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
+            this.clientIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cFirstNameDataGridViewTextBoxColumn
+            // 
+            this.cFirstNameDataGridViewTextBoxColumn.DataPropertyName = "CFirstName";
+            this.cFirstNameDataGridViewTextBoxColumn.HeaderText = "First name";
+            this.cFirstNameDataGridViewTextBoxColumn.Name = "cFirstNameDataGridViewTextBoxColumn";
+            this.cFirstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cMiddleNameDataGridViewTextBoxColumn
+            // 
+            this.cMiddleNameDataGridViewTextBoxColumn.DataPropertyName = "CMiddleName";
+            this.cMiddleNameDataGridViewTextBoxColumn.HeaderText = "Middle name";
+            this.cMiddleNameDataGridViewTextBoxColumn.Name = "cMiddleNameDataGridViewTextBoxColumn";
+            this.cMiddleNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cLastNameDataGridViewTextBoxColumn
+            // 
+            this.cLastNameDataGridViewTextBoxColumn.DataPropertyName = "CLastName";
+            this.cLastNameDataGridViewTextBoxColumn.HeaderText = "Last name";
+            this.cLastNameDataGridViewTextBoxColumn.Name = "cLastNameDataGridViewTextBoxColumn";
+            this.cLastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cellphoneNoDataGridViewTextBoxColumn
+            // 
+            this.cellphoneNoDataGridViewTextBoxColumn.DataPropertyName = "CellphoneNo";
+            this.cellphoneNoDataGridViewTextBoxColumn.HeaderText = "Cellphone number";
+            this.cellphoneNoDataGridViewTextBoxColumn.Name = "cellphoneNoDataGridViewTextBoxColumn";
+            this.cellphoneNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(RecordManagementSystemInAxaNSamar.Model.Client);
             // 
             // tb_Birthday
             // 
@@ -346,42 +389,6 @@
             this.bt_BatchSend.UseVisualStyleBackColor = false;
             this.bt_BatchSend.Click += new System.EventHandler(this.bt_BatchSend_Click);
             // 
-            // clientIdDataGridViewTextBoxColumn
-            // 
-            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
-            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
-            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
-            this.clientIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cFirstNameDataGridViewTextBoxColumn
-            // 
-            this.cFirstNameDataGridViewTextBoxColumn.DataPropertyName = "CFirstName";
-            this.cFirstNameDataGridViewTextBoxColumn.HeaderText = "First name";
-            this.cFirstNameDataGridViewTextBoxColumn.Name = "cFirstNameDataGridViewTextBoxColumn";
-            // 
-            // cMiddleNameDataGridViewTextBoxColumn
-            // 
-            this.cMiddleNameDataGridViewTextBoxColumn.DataPropertyName = "CMiddleName";
-            this.cMiddleNameDataGridViewTextBoxColumn.HeaderText = "Middle name";
-            this.cMiddleNameDataGridViewTextBoxColumn.Name = "cMiddleNameDataGridViewTextBoxColumn";
-            // 
-            // cLastNameDataGridViewTextBoxColumn
-            // 
-            this.cLastNameDataGridViewTextBoxColumn.DataPropertyName = "CLastName";
-            this.cLastNameDataGridViewTextBoxColumn.HeaderText = "Last name";
-            this.cLastNameDataGridViewTextBoxColumn.Name = "cLastNameDataGridViewTextBoxColumn";
-            // 
-            // cellphoneNoDataGridViewTextBoxColumn
-            // 
-            this.cellphoneNoDataGridViewTextBoxColumn.DataPropertyName = "CellphoneNo";
-            this.cellphoneNoDataGridViewTextBoxColumn.HeaderText = "Cellphone number";
-            this.cellphoneNoDataGridViewTextBoxColumn.Name = "cellphoneNoDataGridViewTextBoxColumn";
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataSource = typeof(RecordManagementSystemInAxaNSamar.Model.Client);
-            // 
             // SmsNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,8 +416,8 @@
             this.Load += new System.EventHandler(this.SmsNotification_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ClientList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bt_Close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_Close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

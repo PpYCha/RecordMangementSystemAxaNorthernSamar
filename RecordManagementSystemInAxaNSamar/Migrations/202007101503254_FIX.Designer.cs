@@ -7,13 +7,13 @@ namespace RecordManagementSystemInAxaNSamar.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Nulll : IMigrationMetadata
+    public sealed partial class FIX : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Nulll));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FIX));
         
         string IMigrationMetadata.Id
         {
-            get { return "202007270523597_Nulll"; }
+            get { return "202007101503254_FIX"; }
         }
         
         string IMigrationMetadata.Source

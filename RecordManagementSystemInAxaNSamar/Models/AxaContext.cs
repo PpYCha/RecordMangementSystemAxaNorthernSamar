@@ -10,7 +10,7 @@ namespace RecordManagementSystemInAxaNSamar.Model
             : base("AxaContext")
         {
             Database.SetInitializer<AxaContext>(new AxaDbInitializer());
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AxaContext, Migrations.Configuration>(useSuppliedContext: true));
+           Database.SetInitializer(new MigrateDatabaseToLatestVersion<AxaContext, Migrations.Configuration>(useSuppliedContext: true));
         }
 
         public DbSet<User> Users { get; set; }

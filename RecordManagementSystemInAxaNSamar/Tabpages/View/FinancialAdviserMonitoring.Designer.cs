@@ -38,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bt_SaveUser = new System.Windows.Forms.Button();
             this.bt_Update = new System.Windows.Forms.Button();
-            this.lb_Search = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tb_SearchEmployee = new System.Windows.Forms.TextBox();
             this.bt_Close = new Bunifu.Framework.UI.BunifuImageButton();
@@ -61,11 +60,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(259, 161);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(101, 18);
             this.label3.TabIndex = 15;
             this.label3.Text = "List of Clients:";
             // 
@@ -74,7 +73,7 @@
             this.bt_ViewClientInformation.BackColor = System.Drawing.Color.Goldenrod;
             this.bt_ViewClientInformation.FlatAppearance.BorderSize = 0;
             this.bt_ViewClientInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_ViewClientInformation.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ViewClientInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_ViewClientInformation.Image = global::RecordManagementSystemInAxaNSamar.Properties.Resources.information_32px;
             this.bt_ViewClientInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bt_ViewClientInformation.Location = new System.Drawing.Point(1, 245);
@@ -100,7 +99,7 @@
             // FAName
             // 
             this.FAName.BackColor = System.Drawing.Color.White;
-            this.FAName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FAName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FAName.Location = new System.Drawing.Point(25, 165);
             this.FAName.Name = "FAName";
             this.FAName.Size = new System.Drawing.Size(188, 16);
@@ -109,6 +108,8 @@
             // 
             // dataGridView_ListOfClients
             // 
+            this.dataGridView_ListOfClients.AllowUserToAddRows = false;
+            this.dataGridView_ListOfClients.AllowUserToDeleteRows = false;
             this.dataGridView_ListOfClients.AutoGenerateColumns = false;
             this.dataGridView_ListOfClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_ListOfClients.BackgroundColor = System.Drawing.Color.LightCyan;
@@ -141,7 +142,7 @@
             this.bt_SaveUser.BackColor = System.Drawing.Color.SeaGreen;
             this.bt_SaveUser.FlatAppearance.BorderSize = 0;
             this.bt_SaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_SaveUser.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_SaveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_SaveUser.ForeColor = System.Drawing.Color.White;
             this.bt_SaveUser.Image = global::RecordManagementSystemInAxaNSamar.Properties.Resources.add_user_male_32px;
             this.bt_SaveUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,7 +160,7 @@
             this.bt_Update.BackColor = System.Drawing.Color.DimGray;
             this.bt_Update.FlatAppearance.BorderSize = 0;
             this.bt_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Update.ForeColor = System.Drawing.Color.White;
             this.bt_Update.Image = global::RecordManagementSystemInAxaNSamar.Properties.Resources.refresh_32px;
             this.bt_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,18 +173,6 @@
             this.bt_Update.UseVisualStyleBackColor = false;
             this.bt_Update.Click += new System.EventHandler(this.button3_Click);
             // 
-            // lb_Search
-            // 
-            this.lb_Search.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lb_Search.BackColor = System.Drawing.Color.White;
-            this.lb_Search.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Search.Location = new System.Drawing.Point(462, 123);
-            this.lb_Search.Name = "lb_Search";
-            this.lb_Search.Size = new System.Drawing.Size(315, 23);
-            this.lb_Search.TabIndex = 31;
-            this.lb_Search.Text = "Search Username, Lastname, Firstname && press Enter";
-            this.lb_Search.Click += new System.EventHandler(this.lb_Search_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -195,18 +184,23 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // tb_SearchEmployee
             // 
             this.tb_SearchEmployee.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tb_SearchEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_SearchEmployee.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SearchEmployee.Location = new System.Drawing.Point(453, 115);
             this.tb_SearchEmployee.Multiline = true;
             this.tb_SearchEmployee.Name = "tb_SearchEmployee";
             this.tb_SearchEmployee.Size = new System.Drawing.Size(503, 37);
             this.tb_SearchEmployee.TabIndex = 29;
+            this.tb_SearchEmployee.Text = "Search name";
             this.tb_SearchEmployee.TextChanged += new System.EventHandler(this.tb_SearchEmployee_TextChanged);
+            this.tb_SearchEmployee.Enter += new System.EventHandler(this.tb_SearchEmployee_Enter);
+            this.tb_SearchEmployee.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_SearchEmployee_KeyDown);
+            this.tb_SearchEmployee.Leave += new System.EventHandler(this.tb_SearchEmployee_Leave);
             // 
             // bt_Close
             // 
@@ -291,7 +285,6 @@
             this.ClientSize = new System.Drawing.Size(1027, 551);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bt_Close);
-            this.Controls.Add(this.lb_Search);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tb_SearchEmployee);
             this.Controls.Add(this.bt_Update);
@@ -328,7 +321,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bt_SaveUser;
         private System.Windows.Forms.Button bt_Update;
-        private System.Windows.Forms.Label lb_Search;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tb_SearchEmployee;
         private Bunifu.Framework.UI.BunifuImageButton bt_Close;

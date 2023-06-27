@@ -1,4 +1,5 @@
 ﻿using RecordManagementSystemInAxaNSamar.Model;
+using RecordManagementSystemInAxaNSamar.Tabpages.AddEdit;
 using RecordManagementSystemInAxaNSamar.Tabpages.View;
 using System;
 using System.Drawing;
@@ -20,6 +21,21 @@ namespace RecordManagementSystemInAxaNSamar
             button3.Enabled = false;
             bt_FAMonitoring.Enabled = false;
 
+            using (AxaContext ctx = new AxaContext())
+            {
+                dataGridView_FinancialAdvisor.DataSource = ctx.Employees.Where(x => x.DesignatedPostion == "Financial advisor").ToList();
+            }
+            dataGridView_FinancialAdvisor.Visible = true;
+            dataGridView_Client.Visible = false;
+            dataGridView_FinancialAdvisor.Columns[0].Visible = false;
+
+            bt_FAMonitoring.Enabled = true;
+            bt_FAMonitoring.BackColor = Color.Firebrick;
+
+            button3.BackColor = Color.DimGray;
+            button3.Enabled = false;
+
+            label2.Text = "Financial Advisor List:";
         }
 
         private void LoadClientList()
@@ -44,8 +60,8 @@ namespace RecordManagementSystemInAxaNSamar
 
 
             FinancialAdviserMonitoring financialAdviserMonitoring = new FinancialAdviserMonitoring();
-
-            financialAdviserMonitoring.dgvr = dataGridView_FinancialAdvisor.SelectedRows[0];
+            AddEditClient.selected_FinancialAdvisor = Int32.Parse(dataGridView_FinancialAdvisor.SelectedRows[0].Cells[0].Value.ToString());
+           financialAdviserMonitoring.dgvr = dataGridView_FinancialAdvisor.SelectedRows[0];
             financialAdviserMonitoring.ShowDialog();
         }
 
@@ -57,20 +73,22 @@ namespace RecordManagementSystemInAxaNSamar
             }
             dataGridView_FinancialAdvisor.Visible = true;
             dataGridView_Client.Visible = false;
-
+            dataGridView_FinancialAdvisor.Columns[0].Visible = false;
 
             bt_FAMonitoring.Enabled = true;
             bt_FAMonitoring.BackColor = Color.Firebrick;
 
             button3.BackColor = Color.DimGray;
             button3.Enabled = false;
+
+            label2.Text = "Financial Advisor List:";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             using (AxaContext ctx = new AxaContext())
             {
-                dataGridView_Client.DataSource = ctx.Clients.Where(x => x.CFirstName.Contains(tb_SearchEmployee.Text)).ToList();
+                dataGridView_Client.DataSource = ctx.Clients.ToList();
             }
             dataGridView_Client.Visible = true;
             dataGridView_FinancialAdvisor.Visible = false;
@@ -80,6 +98,8 @@ namespace RecordManagementSystemInAxaNSamar
             bt_FAMonitoring.BackColor = Color.DimGray;
             button3.BackColor = Color.Firebrick;
             button3.Enabled = true;
+
+            label2.Text = "Client List:";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -101,23 +121,37 @@ namespace RecordManagementSystemInAxaNSamar
 
         private void lb_Search_Click(object sender, EventArgs e)
         {
-            lb_Search.Focus();
+           
         }
 
         private void tb_SearchEmployee_TextChanged(object sender, EventArgs e)
         {
-            if (tb_SearchEmployee.TextLength > 0)
-            {
-                lb_Search.Hide();
-            }
-            else
-            {
+          
+        }
 
-                lb_Search.Show();
+        private void tb_SearchEmployee_Enter(object sender, EventArgs e)
+        {
+          
+        }
 
+        private void tb_SearchEmployee_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
 
+        private void tb_SearchEmployee_Leave(object sender, EventArgs e)
+        {
+           
+        }
 
-            }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

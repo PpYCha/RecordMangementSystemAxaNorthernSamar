@@ -17,7 +17,7 @@ namespace RecordManagementSystemInAxaNSamar
 
         public DataGridViewRow dgvrAddEditEmployee;
         public DataGridViewRow dgvrListOfClients;
-
+        private string fileName;
         private void bt_SaveEmployee_Click(object sender, System.EventArgs e)
         {
             SaveEmployee();
@@ -41,7 +41,7 @@ namespace RecordManagementSystemInAxaNSamar
 
                         var employee = new Employee
                         {
-                            IdPicture = textBox1.Text,
+                            IdPicture = fileName,
                             ELastName = tb_LastName.Text,
                             EMiddleName = tb_MiddleName.Text,
                             EFirstName = tb_FirstName.Text,
@@ -86,7 +86,7 @@ namespace RecordManagementSystemInAxaNSamar
                         var employeeUpdate = new Employee
                         {
                             EmployeeId = tempEployeeId,
-                            IdPicture = textBox1.Text,
+                            IdPicture = fileName,
                             ELastName = tb_LastName.Text,
                             EMiddleName = tb_MiddleName.Text,
                             EFirstName = tb_FirstName.Text,
@@ -146,6 +146,7 @@ namespace RecordManagementSystemInAxaNSamar
 
         private void button1_Click(object sender, System.EventArgs e)
         {
+
             OpenFileDialog opd = new OpenFileDialog();
             opd.Title = "Browse Image file for ID";
             opd.DefaultExt = "jpg";
@@ -153,11 +154,20 @@ namespace RecordManagementSystemInAxaNSamar
             opd.Multiselect = false;
             if (opd.ShowDialog() == DialogResult.OK)
             {
+                DateTime foo = DateTime.UtcNow;
+                long unixTime = ((DateTimeOffset)foo).ToUnixTimeSeconds();
+                fileName = unixTime + opd.SafeFileName;
                 textBox1.Text = opd.SafeFileName;
                 pictureBox1.Image = Image.FromFile(opd.FileName);
-                File.Copy(opd.FileName, Application.StartupPath + "\\EmployeePicture\\" + opd.SafeFileName);
+
+
+                File.Copy(opd.FileName, Application.StartupPath + "\\EmployeePicture\\" + fileName);
+
+
 
             }
+
+
         }
 
 

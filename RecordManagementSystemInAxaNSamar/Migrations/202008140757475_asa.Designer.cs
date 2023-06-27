@@ -7,13 +7,13 @@ namespace RecordManagementSystemInAxaNSamar.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SADAD : IMigrationMetadata
+    public sealed partial class asa : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SADAD));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(asa));
         
         string IMigrationMetadata.Id
         {
-            get { return "202007280844134_SADAD"; }
+            get { return "202008140757475_asa"; }
         }
         
         string IMigrationMetadata.Source

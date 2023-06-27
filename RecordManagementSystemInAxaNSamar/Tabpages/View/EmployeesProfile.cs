@@ -64,6 +64,7 @@ namespace RecordManagementSystemInAxaNSamar
             addEditEmployee.dgvrAddEditEmployee = dataGridView_ListOfEmployee.SelectedRows[0];
 
             addEditEmployee.Show();
+
         }
 
         private void bt_Close_Click(object sender, EventArgs e)

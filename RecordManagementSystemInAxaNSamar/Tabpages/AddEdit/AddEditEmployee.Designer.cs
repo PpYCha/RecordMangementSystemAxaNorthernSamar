@@ -360,6 +360,7 @@
             this.label11.Size = new System.Drawing.Size(205, 23);
             this.label11.TabIndex = 36;
             this.label11.Text = "Employee ID Number";
+            this.label11.Visible = false;
             // 
             // textBox1
             // 

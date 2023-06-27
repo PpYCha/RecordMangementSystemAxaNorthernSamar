@@ -2,7 +2,9 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
 
 namespace RecordManagementSystemInAxaNSamar.Tabpages.View
@@ -54,10 +56,10 @@ namespace RecordManagementSystemInAxaNSamar.Tabpages.View
             catch (Exception)
             {
 
-              
+
             }
 
-        
+
 
         }
 
@@ -93,11 +95,90 @@ namespace RecordManagementSystemInAxaNSamar.Tabpages.View
             SQLCon.dataTable = new DataTable();
             SQLCon.sqlDataAdapter.Fill(SQLCon.dataTable);
             dataGridView_PaymentRecordss.DataSource = SQLCon.dataTable;
+
+            try
+            {
+                int totalPaid = 0;
+                int finalTotal = 0;
+                foreach (DataGridViewRow item in dataGridView_PaymentRecordss.Rows)
+                {
+                    totalPaid = Convert.ToInt32(item.Cells["PAYMENT PAID"].Value.ToString());
+                    finalTotal += totalPaid;
+                }
+
+                lbl_totalPaid.Text = finalTotal.ToString();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void isNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void bt_Close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tb_SearchEmployee_Enter(object sender, EventArgs e)
+        {
+            if (tb_SearchEmployee.Text.Contains("Search Policy Number"))
+            {
+                tb_SearchEmployee.Clear();
+            }
+        }
+
+        private void tb_SearchEmployee_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(tb_SearchEmployee.Text))
+            {
+                tb_SearchEmployee.Text = "Search Policy Number";
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            using (AxaContext ctx = new AxaContext())
+            {
+                int clientId = Int32.Parse(dgvrClientPlanMonitoring.Cells[0].Value.ToString());
+                if (String.IsNullOrWhiteSpace(tb_SearchEmployee.Text) || tb_SearchEmployee.Text.Contains("Search Policy Number"))
+                {
+                    clientPlanBindingSource.DataSource = ctx.ClientPlans.Where(x => x.ClientId == clientId).ToList();
+
+                }
+                else
+                {
+
+                    clientPlanBindingSource.DataSource = ctx.ClientPlans.Where(x => x.PolicyNo == tb_SearchEmployee.Text).ToList();
+                }
+            }
+            tb_SearchEmployee.Text = "Search Policy Number";
+        }
+
+        private void tb_SearchEmployee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (AxaContext ctx = new AxaContext())
+                {
+
+                    int clientId = Int32.Parse(dgvrClientPlanMonitoring.Cells[0].Value.ToString());
+                    clientPlanBindingSource.DataSource = ctx.ClientPlans.Where(x => x.PolicyNo == tb_SearchEmployee.Text).ToList();
+                    tb_SearchEmployee.Text = "Search Policy Number";
+                }
+            }
         }
     }
 }

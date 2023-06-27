@@ -1,6 +1,7 @@
 ﻿using RecordManagementSystemInAxaNSamar.Model;
 using RecordManagementSystemInAxaNSamar.Tabpages.AddEdit;
 using System;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -50,7 +51,7 @@ namespace RecordManagementSystemInAxaNSamar.Tabpages.View
         {
             AddEditClient addEditClient = new AddEditClient();
             AddEditClient.tempEmployeeId = Convert.ToInt32(dgvr.Cells[0].Value.ToString());
-            addEditClient.action = "Add";
+            AddEditClient.action = "Add";
             addEditClient.ShowDialog();
         }
 
@@ -63,17 +64,14 @@ namespace RecordManagementSystemInAxaNSamar.Tabpages.View
         {
             if (dataGridView_ListOfClients.SelectedRows.Count > 0)
             {
-                using (AddEditClient addEditClient = new AddEditClient())
-                {
-                    addEditClient.action = "Edit";
-                    using (AxaContext ctx = new AxaContext())
-                    {
-                        //int client_id = (int)dataGridView_ListOfClients.SelectedRows[0].Cells[0].Value;
-                        //addEditClient.selected_client = ctx.Clients.Find(client_id);
-                        //addEditClient.ShowDialog();
+                AddEditClient.action = "Edit";
+                AddEditClient.selected_client = Int32.Parse(dataGridView_ListOfClients.SelectedRows[0].Cells[0].Value.ToString());
+               
+                AddEditClient addEditClient = new AddEditClient();
+                addEditClient.ShowDialog();
 
-                    }
-                }
+                    
+      
             }
         }
 
@@ -84,30 +82,77 @@ namespace RecordManagementSystemInAxaNSamar.Tabpages.View
 
         private void bt_ViewClientInformation_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+           
             ViewInformationForm viewInformationForm = new ViewInformationForm();
             viewInformationForm.selected_client_id = Int32.Parse(dataGridView_ListOfClients.SelectedRows[0].Cells[0].Value.ToString());
             viewInformationForm.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Select Client");
+            }
         }
 
         private void lb_Search_Click(object sender, EventArgs e)
         {
-            lb_Search.Focus();
+       
         }
 
         private void tb_SearchEmployee_TextChanged(object sender, EventArgs e)
         {
-            if (tb_SearchEmployee.TextLength > 0)
+          
+        }
+
+        private void tb_SearchEmployee_Enter(object sender, EventArgs e)
+        {
+            if (tb_SearchEmployee.Text.Contains("Search name"))
             {
-                lb_Search.Hide();
+                tb_SearchEmployee.Clear();
             }
-            else
+        }
+
+        private void tb_SearchEmployee_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(tb_SearchEmployee.Text))
             {
-
-                lb_Search.Show();
-
-
-
+                tb_SearchEmployee.Text = "Search name";
             }
+        }
+
+        private void tb_SearchEmployee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (AxaContext ctx = new AxaContext())
+                {
+
+                    int clientId = Int32.Parse(dgvr.Cells[0].Value.ToString());
+                    clientBindingSource.DataSource = ctx.Clients.Where(x => x.CFirstName.Contains(tb_SearchEmployee.Text) || x.CMiddleName.Contains(tb_SearchEmployee.Text) || x.CLastName.Contains(tb_SearchEmployee.Text)).ToList();
+                    tb_SearchEmployee.Text = "Search name";
+                }
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            using (AxaContext ctx = new AxaContext())
+            {
+                int clientId = Int32.Parse(dgvr.Cells[0].Value.ToString());
+                if (String.IsNullOrWhiteSpace(tb_SearchEmployee.Text) || tb_SearchEmployee.Text.Contains("Search name"))
+                {
+                    clientBindingSource.DataSource = ctx.Clients.Where(x => x.EmployeeId == clientId).ToList();
+
+                }
+                else
+                {
+
+                    clientBindingSource.DataSource = ctx.Clients.Where(x => x.CFirstName.Contains(tb_SearchEmployee.Text) || x.CMiddleName.Contains(tb_SearchEmployee.Text) || x.CLastName.Contains(tb_SearchEmployee.Text)).ToList();
+                }
+            }
+            tb_SearchEmployee.Text = "Search name";
         }
     }
 }

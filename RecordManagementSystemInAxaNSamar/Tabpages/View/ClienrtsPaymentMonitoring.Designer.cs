@@ -51,12 +51,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_totalPaid = new System.Windows.Forms.Label();
             this.dataGridView_PaymentRecordss = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lb_SumInsurred = new System.Windows.Forms.TextBox();
             this.lb_TotalPayment = new System.Windows.Forms.Label();
-            this.lb_SumInsurred = new System.Windows.Forms.Label();
             this.lb_PaymentMethod = new System.Windows.Forms.Label();
             this.lb_PolicyNo = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.paymentRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bt_Close = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuElipse_Form = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.lb_Search = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_SearchEmployee = new System.Windows.Forms.TextBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -89,7 +89,7 @@
             this.bt_SelectClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(255)))));
             this.bt_SelectClient.FlatAppearance.BorderSize = 0;
             this.bt_SelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_SelectClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_SelectClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_SelectClient.ForeColor = System.Drawing.Color.White;
             this.bt_SelectClient.Image = global::RecordManagementSystemInAxaNSamar.Properties.Resources.planner_32px;
             this.bt_SelectClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,6 +103,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -120,6 +122,7 @@
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(29, 95);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(464, 179);
             this.dataGridView1.TabIndex = 11;
@@ -137,12 +140,14 @@
             this.policyNoDataGridViewTextBoxColumn.DataPropertyName = "PolicyNo";
             this.policyNoDataGridViewTextBoxColumn.HeaderText = "PolicyNo";
             this.policyNoDataGridViewTextBoxColumn.Name = "policyNoDataGridViewTextBoxColumn";
+            this.policyNoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sumInsuredDataGridViewTextBoxColumn
             // 
             this.sumInsuredDataGridViewTextBoxColumn.DataPropertyName = "SumInsured";
             this.sumInsuredDataGridViewTextBoxColumn.HeaderText = "SumInsured";
             this.sumInsuredDataGridViewTextBoxColumn.Name = "sumInsuredDataGridViewTextBoxColumn";
+            this.sumInsuredDataGridViewTextBoxColumn.ReadOnly = true;
             this.sumInsuredDataGridViewTextBoxColumn.Visible = false;
             // 
             // modeOfPaymentDataGridViewTextBoxColumn
@@ -150,6 +155,7 @@
             this.modeOfPaymentDataGridViewTextBoxColumn.DataPropertyName = "ModeOfPayment";
             this.modeOfPaymentDataGridViewTextBoxColumn.HeaderText = "ModeOfPayment";
             this.modeOfPaymentDataGridViewTextBoxColumn.Name = "modeOfPaymentDataGridViewTextBoxColumn";
+            this.modeOfPaymentDataGridViewTextBoxColumn.ReadOnly = true;
             this.modeOfPaymentDataGridViewTextBoxColumn.Visible = false;
             // 
             // dueOfPaymentDataGridViewTextBoxColumn
@@ -157,6 +163,7 @@
             this.dueOfPaymentDataGridViewTextBoxColumn.DataPropertyName = "DueOfPayment";
             this.dueOfPaymentDataGridViewTextBoxColumn.HeaderText = "DueOfPayment";
             this.dueOfPaymentDataGridViewTextBoxColumn.Name = "dueOfPaymentDataGridViewTextBoxColumn";
+            this.dueOfPaymentDataGridViewTextBoxColumn.ReadOnly = true;
             this.dueOfPaymentDataGridViewTextBoxColumn.Visible = false;
             // 
             // planIdDataGridViewTextBoxColumn
@@ -164,6 +171,7 @@
             this.planIdDataGridViewTextBoxColumn.DataPropertyName = "PlanId";
             this.planIdDataGridViewTextBoxColumn.HeaderText = "PlanId";
             this.planIdDataGridViewTextBoxColumn.Name = "planIdDataGridViewTextBoxColumn";
+            this.planIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.planIdDataGridViewTextBoxColumn.Visible = false;
             // 
             // planDataGridViewTextBoxColumn
@@ -171,6 +179,7 @@
             this.planDataGridViewTextBoxColumn.DataPropertyName = "Plan";
             this.planDataGridViewTextBoxColumn.HeaderText = "Plan";
             this.planDataGridViewTextBoxColumn.Name = "planDataGridViewTextBoxColumn";
+            this.planDataGridViewTextBoxColumn.ReadOnly = true;
             this.planDataGridViewTextBoxColumn.Visible = false;
             // 
             // clientIdDataGridViewTextBoxColumn
@@ -221,7 +230,7 @@
             this.bt_AddPayment.BackColor = System.Drawing.Color.SeaGreen;
             this.bt_AddPayment.FlatAppearance.BorderSize = 0;
             this.bt_AddPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_AddPayment.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_AddPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_AddPayment.ForeColor = System.Drawing.Color.White;
             this.bt_AddPayment.Image = global::RecordManagementSystemInAxaNSamar.Properties.Resources.Add_Dollar_32px;
             this.bt_AddPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,6 +269,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_totalPaid);
             this.groupBox1.Controls.Add(this.dataGridView_PaymentRecordss);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(503, 243);
@@ -269,8 +279,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PAYMENT RECORDS";
             // 
+            // lbl_totalPaid
+            // 
+            this.lbl_totalPaid.AutoSize = true;
+            this.lbl_totalPaid.Location = new System.Drawing.Point(165, 160);
+            this.lbl_totalPaid.Name = "lbl_totalPaid";
+            this.lbl_totalPaid.Size = new System.Drawing.Size(114, 13);
+            this.lbl_totalPaid.TabIndex = 18;
+            this.lbl_totalPaid.Text = "Total Payment Amount";
+            // 
             // dataGridView_PaymentRecordss
             // 
+            this.dataGridView_PaymentRecordss.AllowUserToAddRows = false;
+            this.dataGridView_PaymentRecordss.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView_PaymentRecordss.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_PaymentRecordss.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -279,7 +300,7 @@
             this.dataGridView_PaymentRecordss.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -290,6 +311,7 @@
             this.dataGridView_PaymentRecordss.EnableHeadersVisualStyles = false;
             this.dataGridView_PaymentRecordss.Location = new System.Drawing.Point(19, 23);
             this.dataGridView_PaymentRecordss.Name = "dataGridView_PaymentRecordss";
+            this.dataGridView_PaymentRecordss.ReadOnly = true;
             this.dataGridView_PaymentRecordss.Size = new System.Drawing.Size(464, 111);
             this.dataGridView_PaymentRecordss.TabIndex = 2;
             // 
@@ -316,8 +338,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lb_TotalPayment);
             this.groupBox4.Controls.Add(this.lb_SumInsurred);
+            this.groupBox4.Controls.Add(this.lb_TotalPayment);
             this.groupBox4.Controls.Add(this.lb_PaymentMethod);
             this.groupBox4.Controls.Add(this.lb_PolicyNo);
             this.groupBox4.Controls.Add(this.label17);
@@ -333,6 +355,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "POLICY DATAILS";
             // 
+            // lb_SumInsurred
+            // 
+            this.lb_SumInsurred.Location = new System.Drawing.Point(312, 27);
+            this.lb_SumInsurred.Name = "lb_SumInsurred";
+            this.lb_SumInsurred.Size = new System.Drawing.Size(142, 20);
+            this.lb_SumInsurred.TabIndex = 17;
+            this.lb_SumInsurred.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isNumeric);
+            // 
             // lb_TotalPayment
             // 
             this.lb_TotalPayment.AutoSize = true;
@@ -341,15 +371,6 @@
             this.lb_TotalPayment.Size = new System.Drawing.Size(114, 13);
             this.lb_TotalPayment.TabIndex = 16;
             this.lb_TotalPayment.Text = "Total Payment Amount";
-            // 
-            // lb_SumInsurred
-            // 
-            this.lb_SumInsurred.AutoSize = true;
-            this.lb_SumInsurred.Location = new System.Drawing.Point(320, 35);
-            this.lb_SumInsurred.Name = "lb_SumInsurred";
-            this.lb_SumInsurred.Size = new System.Drawing.Size(69, 13);
-            this.lb_SumInsurred.TabIndex = 15;
-            this.lb_SumInsurred.Text = "Sum Insurred";
             // 
             // lb_PaymentMethod
             // 
@@ -447,39 +468,33 @@
             this.bunifuElipse_Form.ElipseRadius = 15;
             this.bunifuElipse_Form.TargetControl = this;
             // 
-            // lb_Search
-            // 
-            this.lb_Search.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lb_Search.BackColor = System.Drawing.Color.White;
-            this.lb_Search.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Search.Location = new System.Drawing.Point(33, 85);
-            this.lb_Search.Name = "lb_Search";
-            this.lb_Search.Size = new System.Drawing.Size(357, 23);
-            this.lb_Search.TabIndex = 89;
-            this.lb_Search.Text = "Search Policy Number && press Enter";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::RecordManagementSystemInAxaNSamar.Properties.Resources.find_user_male_32px;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(458, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tb_SearchEmployee
             // 
             this.tb_SearchEmployee.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tb_SearchEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_SearchEmployee.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SearchEmployee.Location = new System.Drawing.Point(29, 77);
+            this.tb_SearchEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SearchEmployee.Location = new System.Drawing.Point(29, 48);
             this.tb_SearchEmployee.Multiline = true;
             this.tb_SearchEmployee.Name = "tb_SearchEmployee";
-            this.tb_SearchEmployee.Size = new System.Drawing.Size(464, 37);
+            this.tb_SearchEmployee.Size = new System.Drawing.Size(464, 41);
             this.tb_SearchEmployee.TabIndex = 87;
+            this.tb_SearchEmployee.Text = "Search Policy Number";
+            this.tb_SearchEmployee.Enter += new System.EventHandler(this.tb_SearchEmployee_Enter);
+            this.tb_SearchEmployee.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_SearchEmployee_KeyDown);
+            this.tb_SearchEmployee.Leave += new System.EventHandler(this.tb_SearchEmployee_Leave);
             // 
             // bunifuElipse1
             // 
@@ -498,9 +513,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 551);
-            this.Controls.Add(this.lb_Search);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tb_SearchEmployee);
             this.Controls.Add(this.bt_Close);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.bt_SelectClient);
@@ -508,6 +520,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tb_SearchEmployee);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClienrtsPaymentMonitoring";
@@ -561,7 +575,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lb_TotalPayment;
-        private System.Windows.Forms.Label lb_SumInsurred;
         private System.Windows.Forms.Label lb_PaymentMethod;
         private System.Windows.Forms.Label lb_PolicyNo;
         private System.Windows.Forms.Label lb_PremiumAmount;
@@ -569,10 +582,11 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView_PaymentRecordss;
         private Bunifu.Framework.UI.BunifuImageButton bt_Close;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse_Form;
-        private System.Windows.Forms.Label lb_Search;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tb_SearchEmployee;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private System.Windows.Forms.Label lbl_totalPaid;
+        private System.Windows.Forms.TextBox lb_SumInsurred;
     }
 }

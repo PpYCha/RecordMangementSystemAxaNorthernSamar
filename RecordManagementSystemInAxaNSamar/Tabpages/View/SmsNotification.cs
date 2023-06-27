@@ -134,38 +134,14 @@ AXA PHILIPPINES-CATARMAN BRANCH";
 
         private void tb_DueClients_Click(object sender, EventArgs e)
         {
-            using (AxaContext ctx = new AxaContext())
-            {
-                DateTime dt = DateTime.Now;
-                int day = dt.Day;
 
-
-                var result = from f in ctx.ClientPlans
-
-                             join d in ctx.Clients
-
-                             on f.ClientId equals d.ClientId into empDept
-
-                             from ed in empDept.DefaultIfEmpty()
-                             where f.DueOfPayment <= day
-                             select new
-
-                             {
-
-                                 ed.CFirstName,
-                                 ed.CMiddleName,
-                                 ed.CLastName,
-                                 ed.CellphoneNo
-
-                             };
-                dataGridView_ClientList.DataSource = result.ToList();
-                //dataGridView_ClientList.DataSource = ctx.Clients.Where(x => x.Due) ToList();
-            }
         }
 
         private void bt_Send_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             Send();
+            Cursor.Current = Cursors.Default;
         }
 
         private void Send()

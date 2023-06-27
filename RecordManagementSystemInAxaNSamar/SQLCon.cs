@@ -15,7 +15,7 @@ namespace RecordManagementSystemInAxaNSamar.Tabpages
         public static DataTable dataTable = new DataTable();
         //public static string sql;
 
-        static string dataSource = "PPYCHA";
+        static string dataSource = "PpYCha";
         static string databaseName = "AxaD";
 
         public static void dbCon()
